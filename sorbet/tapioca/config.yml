@@ -2,13 +2,10 @@ gem:
   # Add your `gem` command parameters here:
   #
   exclude:
-   - irb
    - prism
-   - psych
-   - reline
-   - rbi
    - spoom
-   - thor
+   - tapioca
+   - rbi
   doc: false
   # workers: 5
 dsl:

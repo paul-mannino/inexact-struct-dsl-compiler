@@ -4,10 +4,10 @@
 
 # typed: false
 
-module ::Anonymous_Struct_11; end
-module ::Anonymous_Struct_7; end
-module ::Anonymous_Struct_8; end
-module ::Anonymous_Struct_9; end
-module T::Private::Abstract::Hooks; end
-module T::Private::Methods::MethodHooks; end
-module T::Private::Methods::SingletonMethodHooks; end
+module Tapioca::Commands::DslGenerate; end
+module Tapioca::Compilers::InexactStruct::RBI::KwOptParam; end
+module Tapioca::Compilers::InexactStruct::RBI::TypedParam; end
+module Tapioca::DEFAULT_GEM_DIR; end
+module Tapioca::DEFAULT_RBI_FORMATTER; end
+module Tapioca::Dsl::Compiler; end
+module Tapioca::TAPIOCA_DIR; end
