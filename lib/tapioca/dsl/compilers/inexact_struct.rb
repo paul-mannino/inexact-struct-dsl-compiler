@@ -18,12 +18,19 @@ module Tapioca
       sig { override.void }
       def decorate
         root.create_path(constant) do |klass|
-          klass.create_method('initialize', parameters: build_parameters, return_type: 'void')
+          klass.create_method('initialize', parameters: sorted_parameters, return_type: 'void')
         end
       end
 
+      private
+
       sig { returns(T::Array[RBI::TypedParam]) }
-      def build_parameters
+      def sorted_parameters
+        parameters.sort_by { |param| param.param.is_a?(RBI::KwOptParam) ? 1 : 0 }
+      end
+
+      sig { returns(T::Array[RBI::TypedParam]) }
+      def parameters
         constant.props.map do |name, prop|
           type = prop.fetch(:type_object).to_s
           if prop[:default]

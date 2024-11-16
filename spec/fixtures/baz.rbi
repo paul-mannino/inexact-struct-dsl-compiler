@@ -11,10 +11,10 @@ class Baz
       a: ::Integer,
       b: ::String,
       c: ::Bar,
-      c2: T.nilable(::Foo),
       d: T::Hash[::String, ::String],
-      e: T.untyped
+      e: T.untyped,
+      c2: T.nilable(::Foo)
     ).void
   end
-  def initialize(a:, b:, c:, c2: T.unsafe(nil), d:, e:); end
+  def initialize(a:, b:, c:, d:, e:, c2: T.unsafe(nil)); end
 end
