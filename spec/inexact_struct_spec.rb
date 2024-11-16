@@ -60,6 +60,6 @@ describe 'Tapioca::Compilers::InexactStruct' do
   end
 
   def read_normalized(path)
-    File.read(path).gsub(/^\s*$/, "")
+    File.read(path).gsub(/^\s*$/, '')
   end
 end
