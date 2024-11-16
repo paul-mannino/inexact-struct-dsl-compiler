@@ -2,6 +2,7 @@ AllCops:
   NewCops: enable
   Exclude:
     - 'spec/fixtures/**/*'
+    - 'vendor/bundle/**/*'
   TargetRubyVersion: 3.0
   SuggestExtensions: false
 

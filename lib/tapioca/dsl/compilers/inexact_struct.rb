@@ -22,7 +22,7 @@ module Tapioca
         end
       end
 
-      sig {returns(T::Array[RBI::TypedParam])}
+      sig { returns(T::Array[RBI::TypedParam]) }
       def build_parameters
         constant.props.map do |name, prop|
           type = prop.fetch(:type_object).to_s
