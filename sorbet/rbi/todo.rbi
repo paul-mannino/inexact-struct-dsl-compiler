@@ -9,5 +9,4 @@ module Tapioca::Compilers::InexactStruct::RBI::KwOptParam; end
 module Tapioca::Compilers::InexactStruct::RBI::TypedParam; end
 module Tapioca::DEFAULT_GEM_DIR; end
 module Tapioca::DEFAULT_RBI_FORMATTER; end
-module Tapioca::Dsl::Compiler; end
 module Tapioca::TAPIOCA_DIR; end
