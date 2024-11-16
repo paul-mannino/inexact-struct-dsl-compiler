@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email       = ['pmannino.code@gmail.com']
   spec.homepage    = 'https://github.com/paul-mannino/inexact-struct-dsl-compiler'
   spec.summary     = 'A Tapioca DSL compiler for T::InexactStruct'
-  spec.description = 'A Tapioca DSL compiler that adds'
+  spec.description = 'A Tapioca DSL compiler that adds type-checking for T::InexactStruct\'s constructor'
   spec.license     = 'MIT'
 
   spec.metadata['allowed_push_host'] = 'https://rubygems.org'

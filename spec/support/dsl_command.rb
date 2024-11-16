@@ -20,8 +20,7 @@ module DslCommand
       gem_dir: ::Tapioca::DEFAULT_GEM_DIR,
       rbi_formatter: rbi_formatter,
       app_root: '.',
-      halt_upon_load_error: true,
-      compiler_options: {}
+      halt_upon_load_error: true
     )
   end
 end

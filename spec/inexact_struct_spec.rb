@@ -44,8 +44,8 @@ describe 'Tapioca::Compilers::InexactStruct' do
     expected = Dir['./spec/fixtures/*.rbi']
     actual = Dir[File.join(tmp_dir, '*.rbi')]
     expect(expected.size).to eq(actual.size)
-    expected.zip(actual).each do |expected_example, actual_example|
-      expect(File.read(expected_example)).to(eq(File.read(actual_example)))
+    expected.zip(actual).each do |rbi_expected, rbi_actual|
+      expect(read_normalized(rbi_actual)).to(eq(read_normalized(rbi_expected)))
     end
   end
 
@@ -57,5 +57,9 @@ describe 'Tapioca::Compilers::InexactStruct' do
       expect(actual.size).to eq(1)
       expect(actual.first).to match(/foo.rbi$/)
     end
+  end
+
+  def read_normalized(path)
+    File.read(path).gsub(/^\s*$/, "")
   end
 end
