@@ -12,7 +12,7 @@ For this data class,
   end
 ```
 
-running `bundle exec tapioca dsl` will generate the following .rbi file.
+running `bundle exec tapioca dsl` will generate the following .rbi file:
 
 ```
 class DataClass
@@ -26,16 +26,14 @@ class DataClass
   end
   def initialize(a:, b:, c:, d:,); end
 end
-
-end
 ```
 
 For a project that already uses tapioca, no setup is needed beyond adding this gem to your Gemfile.
 
 ## Motivation
 
-I like Sorbet's T::Struct and T::InexactStruct classes a lot - if your org has already bought into Sorbet, they make a lot of sense to use as an alternative to Ruby's [Struct class](https://docs.ruby-lang.org/en/master/Struct.html). 
+I like Sorbet's T::Struct and T::InexactStruct classes a lot — if your org has already bought into Sorbet, they make a lot of sense to use as an alternative to Ruby's [Struct class](https://docs.ruby-lang.org/en/master/Struct.html). 
 
-T::Struct is great, but it comes with the [understandble limitation](https://sorbet.org/docs/tstruct#structs-and-inheritance) of not being permitted in multi-class inheritance chains -- the performance hit of crawling a class' ancestors makes it a poor fit for static type-checking. T::InexactStruct does not come with this limitation, but Sorbet will not typecheck any arguments passed to `#new`. Tapioca's method of generating RBIs from loaded code make it a very nice tool for shimming in the type-safety that core Sorbet lacks.
+T::Struct is great, but it comes with the [understandble limitation](https://sorbet.org/docs/tstruct#structs-and-inheritance) of not being permitted in multi-class inheritance chains — the performance hit of crawling a class' ancestors makes it a poor fit for static type-checking. T::InexactStruct does not come with this limitation, but Sorbet will not typecheck any arguments passed to `#new`. Tapioca's method of generating RBIs from loaded code make it a very nice tool for shimming in the type-safety that core Sorbet lacks.
 
 Why do I care so much about T::Struct and inheritance? Beyond the obvious (I have T::Struct Foo that is a natural subclass of T::Struct Bar and I want to represent them as such in my code), T::Struct (or T::InexactStruct) has been a useful starting point for data parsing utility classes (API param parsing, API response parsing, etc). 
