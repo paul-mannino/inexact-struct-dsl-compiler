@@ -33,7 +33,7 @@ module Tapioca
       def parameters
         constant.props.map do |name, prop|
           type = prop.fetch(:type_object).to_s
-          if prop[:default]
+          if !prop[:default].nil?
             create_kw_opt_param(name.to_s, type: type, default: 'T.unsafe(nil)')
           elsif T::Props::Utils.optional_prop?(prop)
             create_kw_opt_param(name.to_s, type: type, default: 'nil')
