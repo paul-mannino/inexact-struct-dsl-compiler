@@ -6,6 +6,6 @@
 
 
 class Bar
-  sig { params(x: T::Boolean, z: T.any(::Integer, T::Boolean), r: ::Float, y: T.nilable(::String)).void }
-  def initialize(x:, z:, r: T.unsafe(nil), y: nil); end
+  sig { params(x: T::Boolean, r: ::Float, y: T.nilable(::String), z: T.any(::Integer, T::Boolean)).void }
+  def initialize(x:, r: T.unsafe(nil), y: nil, z: T.unsafe(nil)); end
 end

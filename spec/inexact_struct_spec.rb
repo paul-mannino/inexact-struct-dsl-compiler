@@ -13,7 +13,7 @@ describe 'Tapioca::Compilers::InexactStruct' do
   class Bar < Foo
     const :x, T::Boolean
     const :y, T.nilable(String)
-    const :z, T.any(Integer, T::Boolean)
+    const :z, T.any(Integer, T::Boolean), default: false
   end
 
   class Baz < T::InexactStruct
